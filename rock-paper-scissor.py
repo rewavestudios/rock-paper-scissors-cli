@@ -36,11 +36,17 @@ def determine_winner(user_choice, computer_choice):
     else:
         print('You lose')
 
-# Play one round
+# Play multiple rounds (optional)
 def play_game():
-    user_choice = get_user_choice()
-    computer_choice = random.choice(choices)
-    display_choices(user_choice, computer_choice)
-    determine_winner(user_choice, computer_choice)
+    while True:
+        user_choice = get_user_choice()
+        computer_choice = random.choice(choices)
+        display_choices(user_choice, computer_choice)
+        determine_winner(user_choice, computer_choice)
+
+        # Ask user if they want to continue
+        should_continue = input('Continue? (y/n): ').lower()
+        if should_continue == 'n':
+            break
 
 play_game()
