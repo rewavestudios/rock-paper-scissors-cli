@@ -85,14 +85,18 @@ def play_game():
             total_losses += 1  # Track match loss
 
         # Ask if user wants another match
-        should_continue = input("\nPlay another match? (y/n): ").lower()
-        if should_continue == 'n':
-            break
-
-    # Print stats after all matches
-    print("\n📊 Final Stats:")
-    print(f"Wins: {total_wins}")
-    print(f"Losses: {total_losses}")
-    print(f"Ties: {total_ties}")
+        while True:
+            should_continue = input("\nPlay another match? (y/n): ").lower()
+            if should_continue == 'y':
+                break # Continue the outer loop
+            elif should_continue == 'n':
+                # Print stats after all matches
+                print("\n📊 Final Stats:")
+                print(f"Wins: {total_wins}")
+                print(f"Losses: {total_losses}")
+                print(f"Ties: {total_ties}")
+                return
+            else:
+                print("Invalid input! Please enter 'y' to continue or 'n' to quit.")
 
 play_game()
