@@ -8,6 +8,7 @@ Play against the computer or challenge a friend in 2-player mode — complete wi
 - Single Player mode
 - Best-of-3 match system
 - Emoji-based choices: ⛰️ ✂️ 📃
+- Win/Loss/Tie stats tracking
 - User-friendly and replayable
 
 ## ▶️ How to Run

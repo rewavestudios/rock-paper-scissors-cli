@@ -39,6 +39,11 @@ def determine_winner(user_choice, computer_choice):
 # Play multiple rounds (optional)
 def play_game():
     print("Welcome to Rock, Paper, Scissors!")
+
+    total_wins = 0
+    total_losses = 0
+    total_ties = 0
+
     while True:
         user_score = 0
         computer_score = 0
@@ -58,6 +63,7 @@ def play_game():
 
             if user_choice == computer_choice:
                 print("It's a tie!")
+                total_ties += 1  # Count round ties
             elif (
                 (user_choice == ROCK and computer_choice == SCISSORS) or
                 (user_choice == SCISSORS and computer_choice == PAPER) or
@@ -73,12 +79,20 @@ def play_game():
         print("\n🏁 Match over!")
         if user_score == 2:
             print("🏆 You win the match!")
+            total_wins += 1  # Track match win
         else:
             print("🏆 Computer wins the match!")
+            total_losses += 1  # Track match loss
 
         # Ask if user wants another match
         should_continue = input("\nPlay another match? (y/n): ").lower()
         if should_continue == 'n':
             break
+
+    # Print stats after all matches
+    print("\n📊 Final Stats:")
+    print(f"Wins: {total_wins}")
+    print(f"Losses: {total_losses}")
+    print(f"Ties: {total_ties}")
 
 play_game()
